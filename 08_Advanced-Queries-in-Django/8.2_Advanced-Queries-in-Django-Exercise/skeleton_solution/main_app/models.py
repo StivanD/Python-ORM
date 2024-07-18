@@ -123,6 +123,9 @@ class Project(models.Model):
         to=Technology,
         related_name='projects'
     )
+    
+    def get_programmers_with_technologies(self) -> QuerySet:
+        return self.programmers.prefetch_related('projects__technologies_used')
 
 
 class Programmer(models.Model):
@@ -134,6 +137,9 @@ class Programmer(models.Model):
         to=Project,
         related_name='programmers'
     )
+    
+    def get_projects_with_technologies(self) -> QuerySet:
+        return self.projects.prefetch_related('technologies_used')
 
 
 class Task(models.Model):
