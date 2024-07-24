@@ -4,6 +4,7 @@ from django.core.validators import MinLengthValidator, MinValueValidator, MaxVal
 
 from main_app.choices import ArticleCategoryChoice
 from main_app.mixins import ContentMixin, PublishedOnMixin
+from main_app.managers import AuthorManager
 
 # Create your models here.
 class Author(models.Model):
@@ -33,6 +34,8 @@ class Author(models.Model):
         null=True,
         blank=True
     )
+    
+    objects = AuthorManager()
     
     
 class Article(ContentMixin, PublishedOnMixin):
