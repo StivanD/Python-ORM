@@ -3,3 +3,4 @@ Here are the solutions of all exercises from Python ORM - the second module of t
 SoftUni - https://softuni.bg/
 
 Judge system - https://judge.softuni.org/
+
